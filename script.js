@@ -5,25 +5,23 @@ function getRandomComputerResult() {
 }
 
 function hasPlayerWonTheRound(player, computer) {
-  if (
+  return (
     (player === "Rock" && computer === "Scissors") ||
     (player === "Scissors" && computer === "Paper") ||
     (player === "Paper" && computer === "Rock")
-  ) {
-    return true;
-  } else {
-    return false;
-  }
+  );
 }
+
 let playerScore = 0;
 let computerScore = 0;
 
-function getRoundResult(userOption) {
+function getRoundResults(userOption) {
   const computerResult = getRandomComputerResult();
+
   if (hasPlayerWonTheRound(userOption, computerResult)) {
     playerScore++;
-    return `Plyer wins! ${userOption} beats ${computerResult}`;
-  } else if (userOption === computerResult) {
+    return `Player wins! ${userOption} beats ${computerResult}`;
+  } else if (computerResult === userOption) {
     return `It's a tie! Both chose ${userOption}`;
   } else {
     computerScore++;
@@ -52,7 +50,6 @@ function showResults(userOption) {
     optionsContainer.style.display = "none";
   }
 }
-
 function resetGame() {
   playerScore = 0;
   computerScore = 0;
