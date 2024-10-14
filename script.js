@@ -1,32 +1,3 @@
-const rock = "rock";
-const paper = "paper";
-const scissors = "scissors";
-
-function getComputerChoice() {
-  let choice = Math.random();
-  if (choice < 0.33) {
-    return rock;
-  } else if (choice < 0.66) {
-    return paper;
-  } else {
-    return scissors;
-  }
-}
-
-function getHumanChoice() {
-  let choose = prompt("Choose Rock, Paper, or Scissors").toLowerCase();
-  switch (choose) {
-    case "rock":
-      return rock;
-    case "paper":
-      return paper;
-    case "scissors":
-      return scissors;
-    default:
-      return "invalid";
-  }
-}
-
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 let humanScore = 0;
